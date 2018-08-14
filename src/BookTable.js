@@ -4,6 +4,7 @@ import BookRow from "./BookRow";
 
 class BookTable extends Component {
   render() {
+    console.log(bookRows);
     const bookRows = this.props.books.map(book => (
       <BookRow key={book.title} book={book} />
     ));

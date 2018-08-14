@@ -11,10 +11,11 @@ import BookList from "./BookList";
 
 // Store
 import authorStore from "./stores/AuthorStore";
+import bookStore from "./stores/BookStore";
 
 class App extends Component {
   getView() {
-    if (authorStore.loading) {
+    if (authorStore.loading || bookStore.loading) {
       return <Loading />;
     } else {
       return (

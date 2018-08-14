@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { observer } from "mobx-react";
 
 class BookRow extends Component {
   render() {
@@ -12,9 +13,8 @@ class BookRow extends Component {
     const availableButton = (
       <button
         className={`btn btn-${book.available ? "success" : "danger"}`}
-        onClick={() =>
-          alert("You need to make me 🎵 work work work work work 🎵")
-        }
+        //toggle
+        onClick={() => (book.available = !book.available)}
       >
         {book.available ? "borrow" : "return"}
       </button>
@@ -34,4 +34,4 @@ class BookRow extends Component {
   }
 }
 
-export default BookRow;
+export default observer(BookRow);
